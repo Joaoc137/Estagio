@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora do IMC</title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+	<body class="container">
+        <h1 class="title is-1 has-text-centered">Calculadora JS</h1>
+<div class="box"
+	<form class="container">
+		<div class="block">
+            <div class="field">
+                <div class="control">
+		<label for="weight">Peso (em kg):</label>
+
+		<input class="input" id="weight" type="number" name="weight" placeholder="Digite o seu peso">
+		
+		<label for="height">Altura (em cm):</label>
+		<input class="input" id="height" name="height" type="number" placeholder="Digite a sua altura">
+		<div class="block"></div>
+		<input class="button is-primary" type="submit" value="Calcular IMC">
+	</form>
+</div>
+
+	</body>
+	<div class="block"></div>
+	<div class="result" id="result"></div>
+	
+	<script>
+		function calculateIMC() {
+			var weight = document.getElementById("weight").value;
+			var height = document.getElementById("height").value;
+			
+			var bmi = weight / ((height/100) ** 2);
+
+			document.getElementById("result").innerHTML = "Seu IMC é " + bmi.toFixed(2);
+		}
+		
+		document.querySelector("input[type='submit']").addEventListener("click", function(event) {
+			event.preventDefault();
+			calculateIMC();
+		});
+	</script>
+</body>
+</html>
